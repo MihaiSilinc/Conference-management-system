@@ -1,0 +1,45 @@
+
+<div class="container-align-center">
+  <div class="display-info">
+<!--    <p>Name: {{proposal.name}}</p>-->
+<!--    <p>Abstract: {{proposal.abstractParagraph}}</p>-->
+<!--    <p>Author name: {{proposal.authorName}}</p>-->
+  </div>
+
+  <button class="download-button" (click)="download()">
+    <mat-icon>download</mat-icon>
+    Download paper
+  </button>
+
+  <form [formGroup]="reviewForm" (ngSubmit)="reviewProposal()" class="centered-form inline-flex margin-top">
+    <mat-form-field appearance="fill" class="m-3">
+      <mat-label>Evaluation</mat-label>
+      <mat-select formControlName="score">
+        <mat-option value="STRONG_ACCEPT">Strong Accept</mat-option>
+        <mat-option value="ACCEPT"> Accept</mat-option>
+        <mat-option value="WEAK_ACCEPT"> Weak Accept</mat-option>
+    <mat-option value="BORDERLINE"> Borderline</mat-option>
+    <mat-option value="WEAK_REJECT"> Weak Reject</mat-option>
+    <mat-option value="REJECT">Reject</mat-option>
+    <mat-option value="STRONG_REJECT">Strong Reject</mat-option>
+    </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="m-3">
+      <mat-label>Suggestion</mat-label>
+      <input matInput type="text" formControlName="suggestion">
+      <mat-error *ngIf="suggestion.invalid && suggestion.dirty" class="has-text-danger">
+        This field is required.
+      </mat-error>
+    </mat-form-field>
+
+    <div class="bottom-buttons">
+      <button [disabled]="reviewForm.invalid" mat-raised-button color="primary" type="submit">
+        Submit Review
+      </button>
+    </div>
+  </form>
+
+</div>
+
+

@@ -1,0 +1,20 @@
+@startuml
+
+together {
+    !include user/index.puml
+}
+together {
+    !include paper/index.puml
+}
+together {
+    !include analysis/index.puml
+}
+together {
+    !include evaluation/index.puml
+}
+together {
+    !include conference/index.puml
+}
+
+
+@enduml

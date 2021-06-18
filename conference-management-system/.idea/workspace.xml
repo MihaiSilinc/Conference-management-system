@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="204484e2-3242-453d-81af-c89832e37fe9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/conference-management-system/client/src/app/components/pcmember/papers-to-review/papers-to-review.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conference-management-system/client/src/app/components/pcmember/papers-to-review/papers-to-review.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conference-management-system/client/src/app/components/pcmember/review-proposal/review-proposal.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conference-management-system/client/src/app/components/pcmember/review-proposal/review-proposal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conference-management-system/client/src/app/components/pcmember/review-proposal/review-proposal.component.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tOl8wtEAjDIZasQzQh9Mt9Cfy0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/conference-management-system/client/node_modules/protractor" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Users\mihai\OneDrive\Desktop\conference-management-system\conference-management-system\client\node_modules\typescript\lib" />
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (webclient)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/conference-management-system/client/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/conference-management-system/client/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/conference-management-system/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="204484e2-3242-453d-81af-c89832e37fe9" name="Default Changelist" comment="" />
+      <created>1622647866869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622647866869</updated>
+      <workItem from="1622647873396" duration="284000" />
+      <workItem from="1622723316524" duration="1800000" />
+      <workItem from="1622729182919" duration="193000" />
+      <workItem from="1622729412762" duration="3541000" />
+      <workItem from="1622733607299" duration="37000" />
+      <workItem from="1622733695023" duration="50000" />
+      <workItem from="1622733752880" duration="32000" />
+      <workItem from="1622733793630" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

@@ -1,0 +1,6 @@
+@startuml
+
+class CoChair extends PCMember {
+}
+
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+
+class Listener extends User {
+}
+
+@enduml

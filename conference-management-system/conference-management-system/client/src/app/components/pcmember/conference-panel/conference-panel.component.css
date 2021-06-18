@@ -1,0 +1,29 @@
+#main-div {
+  display: flex;
+  flex-direction: column;
+}
+
+#main-div > * {
+  margin: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+mat-tab-group {
+  width: 90%;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin-top {
+  margin-top: 30px;
+}
+
+

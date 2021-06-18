@@ -1,0 +1,14 @@
+@startuml
+
+class Proposal {
+    - String name
+    - List<String> keywords
+    - List<String> topics
+    - List<Author> authors
+    - Paper paper
+    - String abstractParagraph
+}
+
+Proposal --o Paper : has
+
+@enduml

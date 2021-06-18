@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: CMSBackend
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/cms-db
+    username: cms-user
+    password: cms-password
+    driver-class-name: org.postgresql.Driver
+  security:
+    user:
+      name: user
+      password: password
+server:
+  address: ${SERVER_ADDRESS:0.0.0.0}

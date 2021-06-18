@@ -1,0 +1,11 @@
+@startuml
+
+class Attendance {
+    - Long listenerId
+    - Long presentationId
+}
+
+Attendance "many" <-- Listener : attends
+Attendance "many" <-- Presentation : is attended by
+
+@enduml

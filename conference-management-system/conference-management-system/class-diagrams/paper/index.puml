@@ -1,0 +1,7 @@
+@startuml
+
+!include proposal.puml
+!include paper.puml
+!include Contribution.puml
+
+@enduml

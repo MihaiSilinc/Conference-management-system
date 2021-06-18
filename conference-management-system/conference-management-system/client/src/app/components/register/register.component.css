@@ -1,0 +1,9 @@
+.user-type-radios {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-type-radios mat-radio-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,51 @@
+<form [formGroup]="conferenceForm" (ngSubmit)="createConference()" class="centered-form">
+
+  <p>Create a conference:</p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Conference Name</mat-label>
+    <input matInput type="text" formControlName="conferenceName">
+    <mat-error *ngIf="conferenceName.invalid && conferenceName.dirty" class="has-text-danger">
+      This field is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Abstract Deadline</mat-label>
+    <input matInput type="date" formControlName="abstractDeadline">
+    <mat-error *ngIf="abstractDeadline.invalid && abstractDeadline.dirty" class="has-text-danger">
+      This field is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Call For Papers</mat-label>
+    <input matInput type="date" formControlName="callForPapers">
+    <mat-error *ngIf="callForPapers.invalid && callForPapers.dirty" class="has-text-danger">
+      This field is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Starting Date</mat-label>
+    <input matInput type="date" formControlName="startingDate">
+    <mat-error *ngIf="startingDate.invalid && startingDate.dirty" class="has-text-danger">
+      This field is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Ending Date</mat-label>
+    <input matInput type="date" formControlName="endingDate" [min]="startingDate.value">
+    <mat-error *ngIf="endingDate.invalid && endingDate.dirty" class="has-text-danger">
+      This field is required.
+    </mat-error>
+  </mat-form-field>
+
+  <div class="bottom-buttons">
+    <button [disabled]="conferenceForm.invalid" mat-raised-button color="primary" type="submit">Create conference</button>
+  </div>
+
+  <button mat-raised-button color="primary" class="m-2" routerLink="/home" routerLinkActive="active">Go back</button>
+
+</form>

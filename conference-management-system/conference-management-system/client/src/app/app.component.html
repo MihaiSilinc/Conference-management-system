@@ -1,0 +1,76 @@
+<div class="open-menu-container" [hidden]="!(isUserLoggedIn$ | async)">
+  <button class="open-menu-button" mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened" class="menu-icon">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened" class="close-icon">
+      close
+    </mat-icon>
+  </button>
+</div>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8" [hidden]="!(isUserLoggedIn$ | async)">
+    <h4 class="name">CMS</h4>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button"  routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+
+    <div *ngIf="(loggedInUser$ | async) && (loggedInUser$ | async).userType === 'PCMEMBER'">
+      <button mat-button class="menu-button" routerLink="/pcmember/create-conference">
+        <mat-icon>add_circle_outline</mat-icon>
+        <span>Add Conference</span>
+      </button>
+    </div>
+
+    <div *ngIf="(loggedInUser$ | async) && (loggedInUser$ | async).userType === 'PCMEMBER'">
+      <button mat-button class="menu-button" routerLink="/pcmember/conference-dashboard">
+        <mat-icon>format_list_bulleted</mat-icon>
+        <span>Conferences</span>
+      </button>
+    </div>
+
+    <div *ngIf="(loggedInUser$ | async) && (loggedInUser$ | async).userType === 'PCMEMBER'">
+      <button mat-button class="menu-button" routerLink="/pcmember/papers-to-review">
+        <mat-icon>grading</mat-icon>
+        <span>To review</span>
+      </button>
+    </div>
+
+
+    <div *ngIf="(loggedInUser$ | async) && (loggedInUser$ | async).userType === 'AUTHOR'">
+      <button mat-button class="menu-button" routerLink="/author/conference-dashboard">
+        <mat-icon>person</mat-icon>
+        <span>Conferences</span>
+      </button>
+    </div>
+
+    <div *ngIf="(loggedInUser$ | async) && (loggedInUser$ | async).userType === 'AUTHOR'">
+      <button mat-button class="menu-button" routerLink="/author/reviews">
+        <mat-icon>grading</mat-icon>
+        <span>Reviews</span>
+      </button>
+    </div>
+
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Log out</span>
+    </button>
+
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <div class="logged-in-user" *ngIf="(loggedInUser$ | async) as loggedInUser">
+        <mat-icon>person</mat-icon>
+        <span>{{ loggedInUser.username }}</span>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

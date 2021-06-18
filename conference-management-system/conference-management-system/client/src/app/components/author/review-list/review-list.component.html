@@ -1,0 +1,36 @@
+<div class="container-align-center">
+
+  <table mat-table [dataSource]="reviews$ | async" class="mat-elevation-z8 m-2">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Proposal Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.proposalName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reviewer">
+      <th mat-header-cell *matHeaderCellDef> Reviewer </th>
+      <td mat-cell *matCellDef="let element"> {{element.reviewerName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef> Evaluation Score </th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngIf="element.evaluationScore as score; else pending">
+          {{ score }}
+        </ng-container>
+        <ng-template #pending>
+          PENDING
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="recommendation">
+      <th mat-header-cell *matHeaderCellDef> Recommendation </th>
+      <td mat-cell *matCellDef="let element"> {{element.recommendation}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

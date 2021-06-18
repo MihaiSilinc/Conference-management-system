@@ -1,0 +1,24 @@
+<form [formGroup]="proposalForm" (ngSubmit)="upload()" class="centered-form">
+  <mat-form-field appearance="fill" class="m-3">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" autocomplete="off">
+    <mat-error *ngIf="name.invalid && name.dirty" class="has-text-danger">
+      This field is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="m-3">
+    <mat-label>Abstract</mat-label>
+    <input matInput formControlName="abstractParagraph" autocomplete="off" class="big-input">
+    <mat-error *ngIf="abstractParagraph.invalid && abstractParagraph.dirty" class="has-text-danger">
+      This field is required.
+    </mat-error>
+  </mat-form-field>
+
+  <div class="m-3 file-upload">
+    <mat-label class="display-block">Paper</mat-label>
+    <input class="ng-hide" type="file" (change)="changedPaper($event)" />
+  </div>
+
+  <button class="margin-top" [disabled]="proposalForm.invalid || !paper" mat-raised-button color="primary" type="submit">Upload</button>
+</form>

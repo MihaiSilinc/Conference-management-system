@@ -1,0 +1,15 @@
+version: "3"
+services:
+  local-database:
+    image: postgres
+    container_name: local-cms-database
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: cms-user
+      POSTGRES_PASSWORD: cms-password
+      POSTGRES_DB: cms-db
+    volumes:
+    - "db-data:/var/lib/postgresql/data"
+volumes:
+  db-data:

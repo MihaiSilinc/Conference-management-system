@@ -1,0 +1,12 @@
+@startuml
+
+class Conference {
+    - Date abstractDeadline
+    - Date callForPapers
+    - Date startingDate
+    - Date endingDate
+    - List<Section> sections
+}
+
+
+@enduml

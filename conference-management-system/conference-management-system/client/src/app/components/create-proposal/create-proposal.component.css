@@ -1,0 +1,10 @@
+.big-input {
+  height: 10rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.margin-top {
+  margin-top: 2rem;
+}
+

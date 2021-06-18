@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  --color-main: rgb(100,60,180);
+  --color-highlight: rgb(35, 0, 112);
+}
+
+.container-align-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid var(--color-main) 2px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.centered-form mat-form-field {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.inline-flex {
+  display: inline-flex !important;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.display-block {
+  display: block !important;
+}

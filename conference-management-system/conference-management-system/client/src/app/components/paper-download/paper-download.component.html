@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+  <mat-label>Paper names</mat-label>
+  <mat-select (selectionChange)="changedPaper($event)">
+    <mat-option  *ngFor="let paperName of paperNames" [value]="paperName">
+      {{paperName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<button class="btn btn-primary" [disabled]="!fileNameToBeDownloaded" (click)="download()">Download paper</button>

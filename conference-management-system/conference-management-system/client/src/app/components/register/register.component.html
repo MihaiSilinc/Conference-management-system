@@ -1,0 +1,83 @@
+
+<div class="container-align-center">
+  <mat-error *ngIf="error$ | async as error">
+    {{ error }}
+  </mat-error>
+
+  <form [formGroup]="registerForm" (ngSubmit)="registerTrigger()" class="centered-form">
+    <label id="userTypeLabel">User type</label>
+    <mat-radio-group aria-labelledby="userTypeLabel" formControlName="userType" class="user-type-radios">
+      <mat-radio-button value="AUTHOR">Author</mat-radio-button>
+      <mat-radio-button value="LISTENER">Listener</mat-radio-button>
+      <mat-radio-button value="PCMEMBER">PC Member</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="fill" class="m-3">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="username" formControlName="username" autocomplete="off">
+      <mat-error *ngIf="username.invalid && username.dirty" class="has-text-danger">
+        Username should be at least 5 characters long.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" class="example-right-align" formControlName="password">
+      <mat-error *ngIf="password.invalid && password.dirty" class="has-text-danger">
+        Length must be at least 5 characters long.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm password</mat-label>
+      <input matInput type="password" class="example-right-align" formControlName="confirmPassword">
+      <mat-error *ngIf="confirmPassword.invalid && confirmPassword.dirty" class="has-text-danger">
+        Passwords do not match.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="m-3">
+      <mat-label>First name</mat-label>
+      <input matInput placeholder="first name" formControlName="firstName" autocomplete="off">
+      <mat-error *ngIf="firstName.invalid && firstName.dirty" class="has-text-danger">
+        This field is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="m-3">
+      <mat-label>Last name</mat-label>
+      <input matInput placeholder="last name" formControlName="lastName" autocomplete="off">
+      <mat-error *ngIf="lastName.invalid && lastName.dirty" class="has-text-danger">
+        This field is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="m-3">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email@example.com" formControlName="email" autocomplete="off">
+      <mat-error *ngIf="email.invalid && email.dirty" class="has-text-danger">
+        This field is required.
+      </mat-error>
+    </mat-form-field>
+
+    <ng-container *ngIf="userType.value === 'PCMEMBER'">
+      <mat-form-field appearance="fill" class="m-3">
+        <mat-label>Web page</mat-label>
+        <input matInput placeholder="www.webpage.com" formControlName="webPage" autocomplete="off">
+        <mat-error *ngIf="webPage.invalid && webPage.dirty" class="has-text-danger">
+          This field is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="m-3">
+        <mat-label>Affiliation</mat-label>
+        <input matInput formControlName="affiliation" autocomplete="off">
+        <mat-error *ngIf="affiliation.invalid && affiliation.dirty" class="has-text-danger">
+          This field is required.
+        </mat-error>
+      </mat-form-field>
+    </ng-container>
+
+    <button [disabled]="registerForm.invalid" mat-raised-button color="primary" type="submit">Register</button>
+  </form>
+</div>

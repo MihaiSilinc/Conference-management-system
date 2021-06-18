@@ -1,0 +1,9 @@
+@startuml
+
+class PCMember extends Author {
+    - String affiliation
+    - String emailAddress
+    - String webPage
+}
+
+@enduml

@@ -1,0 +1,30 @@
+.display-info {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.container-align-center {
+  flex-direction: column;
+}
+
+.display-info p form {
+  margin: 0.5rem;
+}
+
+.download-button {
+  background: var(--color-main);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1rem;
+}
+
+.download-button:hover {
+  cursor: pointer;
+}

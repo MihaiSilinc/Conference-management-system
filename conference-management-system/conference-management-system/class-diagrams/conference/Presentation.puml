@@ -1,0 +1,14 @@
+@startuml
+
+class Presentation {
+    - Long pcMemberId
+    - Long authorId
+    - Date date
+    - Time startTime
+    - Time endTime
+}
+
+Presentation <-- PCMember : is moderated by
+Presentation <-- Author : presents
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+
+class Evaluation {
+    - Long pcMemberId
+    - Long proposalId
+    - EvaluationScore score
+    - String recommendation
+}
+
+Evaluation --o EvaluationScore : has
+Evaluation <-- PCMember : performs
+Evaluation <-- Proposal : receives
+
+@enduml

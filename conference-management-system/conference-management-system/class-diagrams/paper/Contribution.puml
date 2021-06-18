@@ -1,0 +1,11 @@
+@startuml
+
+class Contribution {
+    ID authorId
+    ID paperId
+}
+
+Contribution --o Author : is made by
+Contribution --o Paper : towards
+
+@enduml

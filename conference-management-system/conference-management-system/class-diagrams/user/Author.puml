@@ -1,0 +1,6 @@
+@startuml
+
+class Author extends User {
+}
+
+@enduml

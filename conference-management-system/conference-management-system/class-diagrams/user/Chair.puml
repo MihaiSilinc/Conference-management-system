@@ -1,0 +1,6 @@
+@startuml
+
+class Chair extends PCMember {
+}
+
+@enduml

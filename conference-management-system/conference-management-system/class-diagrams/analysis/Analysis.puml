@@ -1,0 +1,13 @@
+@startuml
+
+class Analysis {
+    - Long pcMemberId
+    - Long proposalId
+    - AnalysisScore score
+}
+
+Analysis <-- PCMember : performs
+Analysis <-- Proposal : receives
+Analysis --o AnalysisScore : has
+
+@enduml

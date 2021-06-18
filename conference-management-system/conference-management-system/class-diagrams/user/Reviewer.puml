@@ -1,0 +1,7 @@
+@startuml
+
+class Reviewer extends PCMember {
+
+}
+
+@enduml

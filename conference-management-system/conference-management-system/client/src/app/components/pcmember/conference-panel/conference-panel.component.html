@@ -1,0 +1,123 @@
+<div class="container-align-center" id="main-div">
+  <h1>{{conference.name}}</h1>
+  <h2>Control panel</h2>
+
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Committee members">
+      <div class="tab">
+        <table mat-table [dataSource]="reviewers$ | async" class="mat-elevation-z8 m-2">
+          <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef> First Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef> Last Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email address </th>
+            <td mat-cell *matCellDef="let element"> {{element.emailAddress}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="affiliation">
+            <th mat-header-cell *matHeaderCellDef> Affiliation </th>
+            <td mat-cell *matCellDef="let element"> {{element.affiliation}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsForReviewers"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsForReviewers;"></tr>
+        </table>
+
+        <form [formGroup]="addPCMemberForm" (ngSubmit)="addPCMember()" class="centered-form inline-flex margin-top">
+          <mat-form-field appearance="fill" class="m-3">
+            <mat-label>Committee Member</mat-label>
+            <mat-select formControlName="pcmember">
+              <mat-option *ngFor="let member of (pcmembers$ | async)" value="{{member.id}}">{{member.firstName}} {{member.lastName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="m-3">
+            <mat-label>Designation</mat-label>
+            <mat-select formControlName="designation">
+              <mat-option value="REVIEWER">Reviewer</mat-option>
+              <mat-option value="COCHAIR">Co-chair</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="bottom-buttons">
+            <button [disabled]="addPCMemberForm.invalid" mat-raised-button color="primary" type="submit">
+              Add Committee Member
+            </button>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Proposals">
+      <div class="tab">
+        <table mat-table [dataSource]="proposals$ | async" class="mat-elevation-z8 m-2">
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Proposal name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="abstract">
+            <th mat-header-cell *matHeaderCellDef> Abstract paragraph </th>
+            <td mat-cell *matCellDef="let element"> {{element.abstractParagraph}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="paper">
+            <th mat-header-cell *matHeaderCellDef> Paper name </th>
+            <td mat-cell *matCellDef="let element"> {{element.paperName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="author">
+            <th mat-header-cell *matHeaderCellDef> Author name </th>
+            <td mat-cell *matCellDef="let element"> {{element.authorName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="reviewers">
+            <th mat-header-cell *matHeaderCellDef> Assigned reviewers </th>
+            <td mat-cell *matCellDef="let element">
+              <div *ngFor="let reviewer of element.reviewers">
+                {{reviewer.username}}
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsForProposals"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsForProposals;"></tr>
+        </table>
+
+        <form [formGroup]="proposalForm" (ngSubmit)="assignProposalToReviewer()"
+              class="centered-form inline-flex margin-top">
+
+          <mat-form-field appearance="fill" class="m-3">
+            <mat-label>Proposal</mat-label>
+            <mat-select formControlName="proposal" ngModel (ngModelChange)="selectedProposal()">
+              <mat-option *ngFor="let proposal of (proposals$ | async)"
+                          value="{{proposal.id}}">{{proposal.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="m-3">
+            <mat-label>Reviewer</mat-label>
+            <mat-select formControlName="reviewer">
+              <mat-option *ngFor="let reviewer of (unassignedReviewers$ | async)" value="{{reviewer.id}}">
+                {{reviewer.firstName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="bottom-buttons">
+            <button [disabled]="proposalForm.invalid" mat-raised-button color="primary" type="submit">Assign Reviewer</button>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <button mat-raised-button color="primary" class="m-2" routerLink="/pcmember/conference-dashboard" routerLinkActive="active">Go back</button>
+</div>
+
